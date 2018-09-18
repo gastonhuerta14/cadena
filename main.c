@@ -11,6 +11,9 @@ typedef struct
 }sAlumno;
 
 void cargarListadoDeAlumnos(sAlumno[], int);
+
+void ordenarListadoDeAlumno(sAlumno[], int);
+
 void mostrarListadoDeAlumnos(sAlumno[], int);
 
 void mostrarUnAlumno(sAlumno);
@@ -19,6 +22,31 @@ sAlumno cargarUnAlumno;
 int main()
 {
   sAlumno listadoMain[A];
+  int i;
+
+  do
+    {
+
+        printf("a. Alta de alumno.\no. Ordenar lista de estado.\nm. Mostrar lista de estado.\n");
+        printf("Ingrese una opcion: ");
+        opcion = getche();
+        switch(opcion)
+        {
+        case 'a':
+            cargarListadoDeAlumnos(listadoMain, A);
+            break;
+        case 'o':
+            ordenarListadoDeAlumno(listadoMain, A);
+            break;
+        case 'm':
+            mostrarListadoDeAlumnos(listadoMain, A);
+            break;
+
+        }
+
+
+    }while(opcion!='a')
+
   cargarListadoDeAlumnos(listadoMain, A);
   mostrarListadoDeAlumnos(listadoMain, A);
 
